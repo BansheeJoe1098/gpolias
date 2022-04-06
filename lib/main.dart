@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
       title: _title,
       theme: ThemeData(
 
-       primarySwatch: Colors.blue,
+       primarySwatch: Colors.amber,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(_title),
+
 
         ),
         body: const MyStatefulWidget(
@@ -42,20 +42,41 @@ class SecondScreen extends StatelessWidget {
             title: Text(''),
 
             automaticallyImplyLeading: false,
-            backgroundColor: Color(0xff5808e5),
+            backgroundColor: Colors.amber,
             bottom: TabBar(
-              indicatorColor: Colors.white,
+              indicatorColor: Colors.black,
               tabs: [
-                Tab(text: 'DOGS', icon: Icon(Icons.favorite)),
-                Tab(text: 'CATS', icon: Icon(Icons.music_note)),
+                Tab(
+                    text: 'Trabajos Realizados',
+                    icon: Icon(Icons.alarm_on_rounded)),
+                Tab(
+                    text: 'Trabajos Pendientes',
+                    icon: Icon(Icons.warning)),
                 //Tab(text: 'BIRDS', icon: Icon(Icons.search)),
               ],
             ),
           ),
           body: TabBarView(
             children: [
-              Center(child: Text('DOGS')),
-              Center(child: Text('CATS')),
+              ListView(
+                children: [
+                  ListTile(
+                    title: Text('Plomeria'),
+                    leading: Icon(Icons.label),
+                    trailing: Text('Privada del Rocio #36,Col.Vista Hermosa'),
+                    isThreeLine: true,
+                    subtitle: Text('Secondary text\nTertiary text'),
+                  ),
+                  ListTile(
+                    title: Text('Plomeria'),
+                    leading: Icon(Icons.label),
+                    trailing: Text('Privada del Rocio #36,Col.Vista Hermosa'),
+                  ),
+                ],
+              ),
+              Center(
+                  child:
+                  Text('CATS')),
               //Center(child: Text('BIRDS')),
             ],
           ),
@@ -97,7 +118,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Sign in',
+                  'Ingresar',
                   style: TextStyle(fontSize: 20),
                 )),
             Container(
@@ -108,7 +129,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Usuario o Correo Electronico',
-                  icon: Icon(Icons.ac_unit_outlined),
+                  icon: Icon(Icons.account_circle),
                 ),
               ),
 
@@ -121,6 +142,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Contarseña',
+                  icon: Icon(Icons.admin_panel_settings),
                 ),
               ),
             ),
