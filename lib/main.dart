@@ -40,6 +40,11 @@ class SecondScreen extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title: Text(''),
+            leading: IconButton(
+              onPressed:(){
+
+              }, icon: Icon(Icons.perm_identity_sharp,size: 50,),
+            ),
 
             automaticallyImplyLeading: false,
             backgroundColor: Colors.amber,
